@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>SoliCode</title>
+</head>
+<body>
+    <section class="accueil">
+     <p>SoliCode est un clé pour développer votre cursus dans le domaine numérique et pour vous préparer aux futurs challenges.</p>
+     <div class="container">
+         <span id="active">Accueil</span>
+         <span  id="active">Activités</span>
+         <span id="active">Contacts</span>
+        </div>
+    </section>
+    <section class="artiimg">
+        <img src="logoo.png" alt="logoo" width="500">
+        <article class="article">
+           <p>EMPATHY, HUMANITY AND SUPPORT FOR EACH OTHER IS MORE IMPORTANT THAN REVENUE, THAN GROWTH.</p>
+           <p>-Eric Yuan, Zoom CEO-</p>
+        </article>
+    </section>
+
+    <h1>Activités</h1> 
+            <div class="activitéimg">
+                <div class="image1">
+                    <img src="robotique.jpg" alt="robotique" width="200">
+                    <img src="informatique.jpg" alt="informatique" width="200">
+                    <img src="jeu d'échec.jpg" alt="jeu d'échec" width="200">
+                </div>
+                <div class="image1">
+                    <img src="foot.jpg" alt="foot" width="200">
+                    <img src="Théatre.jpg" alt="Théatre" width="200">
+                    <img src="musique.jpg" alt="musique" width="200">
+
+                </div>
+
+            <div  class="clubs">
+                  <form class="infoPer">
+
+                      <label >Nom</label>
+                      <input type="text" onkeyup="validNomPr(this)" >
+                      <label >Prénom</label>
+                      <input type="text" onkeyup="validNomPr(this)" >
+                      <label > addresse Email</label>
+                     <input type="email"onkeyup="validate(this)">
+                     <label>Numéro de Téléphone</label>
+                     <input type="tel" onkeyup="validNuTe(this)">
+                  </form>
+                  <label>Genre</label>
+                  <form class="genre" >
+                            <label> Masculin</label>
+                            <input class="check"  type="radio" value="Masculin" onclick="return Genre()" >
+                             <label > Féminin  </label>
+                            <input class="check" type="radio"  value="Féminin" onclick="return Genre()">
+                            <p id="invalid"></p>
+                        </form>
+                   
+                  
+             
+                  <label>Groupes</label>
+                   <form class="Group">
+                  <input type="checkbox" name="DW101" id="sel" value="DW101" onclick="return Groupe()">
+                    <label>DW101</label>
+                   <input type="checkbox" name="DW102" id="sel" value="DW102" onclick="return Groupe()">
+                   <label>DW102</label>
+                   <input type="checkbox" name="DW103" id="sel" value="DW103" onclick="return Groupe()">
+                   <label>DW103</label>
+                   <input type="checkbox" name="DM101" id="sel" value="DM101" onclick="return Groupe()"> 
+                   <label>DM101</label>
+                   <input type="checkbox" name="DM102" id="sel" value="DM102" onclick="return Groupe()">
+                   <label>DM102</label>
+                   <p id="message"></p>
+                </form>
+                
+                <label>Clubs</label>
+                <form class="club">
+                    <input type="checkbox" name="robotique" id="act" value="robotique" onclick="return Club()">
+                    <label>Robotique</label>
+              
+                    <input type="checkbox" name="informatique" id="act" value="informatique" onclick="return Club()">
+                    <label>Informatique</label>
+              
+                    <input type="checkbox" name="jeu d'échec" id="act" value="jeu d'échec" onclick="return Club()">
+                    <label>Jeu d'échec</label>
+               
+                    <input type="checkbox" name="foot" id="act" value="foot" onclick="return Club()">
+                    <label>foot</label>
+              
+                    <input type="checkbox" name="Théatre" id="act" value="Théatre" onclick="return Club()">
+                    <label>Théatre</label>
+                
+                    <input type="checkbox" name="musique" id="act" value="musique" onclick="return Club()">
+                    <label>Musique</label>
+                    <p id="msg"></p>
+                </form> 
+
+
+             <input type="submit" value="Envoyer" id="btn">
+    </div>
+    <h1>Contacts</h1>
+    <section class="contact">
+        <img src="Capture.PNG" alt="Capture" width="500">
+
+        <article class="rejoignez">
+            <p>SoliCode c'est un clé pour développer votre cursus dans le domaine numérique et pour vous préparer aux futurs challenges.<br>
+                voulez-vous d'être un développeur de qualité ?<br>
+                Qui-ce-que vous attendez?<br>
+                Rejoignez-nous!</p>
+                <p>Adresse : Bni Waryaghel 90000, tanger Maroc</p>
+                <p>Email : info@solicode.co</p>
+                <p>Portable : (212) 652791257</p>
+                <p>Fix : (212) 0539308885</p>
+                <button>CONTACTEZ-NOUS</button>
+            </article>
+    </section>
+     <footer>
+        <img src="facebook.png" alt="facebook" width="30">
+        <img src="instagram.png" alt="instagram" width="30">
+        <img src="linkedin.png" alt="linkedin" width="30">
+        <p>Copyrights © 2022 All Rights Reserved by SoliCode.</p>
+           
+        
+    </footer>  
+    <script>
+           function validNomPr(username){
+        var val = username.value;
+        const patternx =  /^[a-zA-Z-\s]+$/;
+        if (val.length <= 3 || val.length > 30){
+            username.classList.add("invalid");
+            username.classList.remove("valid");
+            
+        }
+        else if (patternx.test(val)){
+            username.classList.add("valid");
+            username.classList.remove("invalid");
+
+        }
+        
+        else{
+            username.classList.add("invalid");
+            username.classList.remove("valid");
+        }
+        }
+       
+
+        function validate(elem){
+         var val = elem.value;
+       const pattern = /^[a-zA-Z]+[a-zA-Z]+@[a-zA-Z]+\.[a-zA-Z]/;
+       if(pattern.test(val)){
+            elem.classList.add("valid")
+            elem.classList.remove("invalid")
+            
+        }else{
+            elem.classList.add("invalid")
+            elem.classList.remove("valid")
+       }
+       }
+    
+       function validNuTe(Numtele){
+        var val = Numtele.value;
+        const pattern = /^(05|06|07)\d{8}$/;
+        if (pattern.test(val)){
+            Numtele.classList.add("valid");
+            Numtele.classList.remove("invalid");
+        }else{
+            Numtele.classList.add("invalid");
+            Numtele.classList.remove("valid");
+        }
+       }
+       function Genre(){
+        let allcheck = document.querySelectorAll('.check');
+        let selected = 0;
+        for(let count = 0 ; count< allcheck.length; count++){
+            if(allcheck[count].checked == true){
+                selected += 1;
+            }
+        }
+        if (selected>1){
+            document.querySelector('#invalid').innerText= 'erreur! ';
+            return false;
+        }else{
+            document.querySelector('#invalid').innerText= '';
+        }
+       }
+
+      function Groupe(){
+        let allselect = document.querySelectorAll('#sel');
+        let sele = 0;
+        for(let i=0; i< allselect.length; i++){
+            if(allselect[i].checked==true){
+                sele +=1;
+            }
+        }
+        if (sele>1){
+            document.querySelector('#message').innerText= 'erreur! ';
+            return false;
+        }else{
+            document.querySelector('#message').innerText= '';
+        }
+      }
+
+      function Club(){
+        let allactivi = document.querySelectorAll('#act');
+        let selacti = 0;
+        for(let A=0; A<allactivi.length; A++){
+            if(allactivi[A].checked==true){
+                selacti +=1;
+            }
+        }
+        if (selacti > 3){
+            document.querySelector('#msg').innerText= 'erreur!';
+            return false;
+        }else{
+            document.querySelector('#msg').innerText= '';
+        }
+      }
+       
+       
+       
+       
+      
+    </script> 
+</body>
+</html>
