@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    text-align: center;
+    color: #251af1;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    grid-column: 1/12;
+    color: white;
+}
+
+h2 {
+    grid-column: 3/6;
+    margin-top: 2rem;
+    color: white;
+}
+
+p {
+    grid-column: 3/8;
+}
+
+.clubs {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    margin-left: 19rem;
+    margin: 2% 0 2% 20%;
+    background-color: hsla(220, 67%, 52%, 0.548);
+    border-radius: 15px;
+    width: 60%;
+}
+
+input {
+    grid-column: 3/11;
+    height: 2rem;
+    margin-top: 2rem;
+    border: hidden;
+    border-radius: 2rem;
+    padding-left: 1rem;
+    outline: none;
+}
+
+::placeholder {
+    padding-left: 1rem;
+}
+
+.genre {
+    grid-column: 3/6;
+    color: white;
+}
+
+.check {
+    height: 1rem;
+}
+
+.Group {
+    display: flex;
+    grid-column: 3/8;
+    color: white;
+}
+
+label {
+    margin: 2.4rem 1rem 0 1rem;
+    width: 5rem;
+}
+
+.act {
+    grid-column: 6/9;
+}
+
+.club {
+    display: flex;
+    grid-column: 3/10;
+    color: white;
+}
+
+#btn {
+    border-radius: 2rem;
+    margin: 2rem 0;
+     grid-column: 6/8;
+}
+
+.valid {
+    border: 5px solid rgb(93, 204, 93) !important;
+
+}
+
+.invalid {
+    border: 5px solid red !important;
+
+}
+
+#invalid {
+    color: red;
+    font-size: large;
+}
+
+#message {
+    color: red;
+    font-size: large;
+}
+
+#msg {
+    color: red;
+    font-size: large;
+}

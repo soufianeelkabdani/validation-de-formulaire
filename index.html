@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>SoliCode</title>
+</head>
+
+<body>
+        <form class="clubs">
+            <h1>Renseigner votre information au dessous</h1>
+            <input type="text" placeholder="Nom" onkeyup="validNomPr(this)">
+            <input type="text" placeholder="Prénom" onkeyup="validNomPr(this)">
+            <input type="email" placeholder="addresse Email" onkeyup="validate(this)">
+            <input type="tel" placeholder="Numéro de Téléphone" onkeyup="validNuTe(this)">
+            <h2>Genre</h2>
+            <div class="genre">
+                <label> Masculin</label>
+                <input class="check" type="radio" value="Masculin" onclick="return Genre()">
+                <label> Féminin </label>
+                <input class="check" type="radio" value="Féminin" onclick="return Genre()">
+                <p id="invalid"></p>
+            </div>
+        <h2>Groupes</h2>
+        <div class="Group">
+            <input type="checkbox" name="DW101" id="sel" value="DW101" onclick="return Groupe()">
+            <label>DW101</label>
+            <input type="checkbox" name="DW102" id="sel" value="DW102" onclick="return Groupe()">
+            <label>DW102</label>
+            <input type="checkbox" name="DW103" id="sel" value="DW103" onclick="return Groupe()">
+            <label>DW103</label>
+            <input type="checkbox" name="DM101" id="sel" value="DM101" onclick="return Groupe()">
+            <label>DM101</label>
+            <input type="checkbox" name="DM102" id="sel" value="DM102" onclick="return Groupe()">
+            <label>DM102</label>
+        </div>
+        <p id="message"></p>
+
+        <h2>Clubs</h2>
+        <div class="club">
+            <input type="checkbox" name="robotique" id="act" value="robotique" onclick="return Club()">
+            <label>Robotique</label>
+
+            <input type="checkbox" name="informatique" id="act" value="informatique" onclick="return Club()">
+            <label>Informatique</label>
+
+            <input type="checkbox" name="jeu d'échec" class="act" id="act" value="jeu d'échec" onclick="return Club()">
+            <label>Jeu d'échec</label>
+
+            <input type="checkbox" name="foot" id="act" value="foot" onclick="return Club()">
+            <label>foot</label>
+
+            <input type="checkbox" name="Théatre" id="act" value="Théatre" onclick="return Club()">
+            <label>Théatre</label>
+
+            <input type="checkbox" name="musique" id="act" value="musique" onclick="return Club()">
+            <label>Musique</label>
+        </div>
+        <p id="msg"></p>
+        <input type="submit" value="Envoyer" id="btn">
+    </form>
+
+    <script>
+        function validNomPr(username) {
+            var val = username.value;
+            const patternx = /^[a-zA-Z-\s]+$/;
+            if (val.length <= 3 || val.length > 30) {
+                username.classList.add("invalid");
+                username.classList.remove("valid");
+
+            }
+            else if (patternx.test(val)) {
+                username.classList.add("valid");
+                username.classList.remove("invalid");
+
+            }
+
+            else {
+                username.classList.add("invalid");
+                username.classList.remove("valid");
+            }
+        }
+
+
+        function validate(elem) {
+            var val = elem.value;
+            const pattern = /^[a-zA-Z]+[a-zA-Z]+@[a-zA-Z]+\.[a-zA-Z]/;
+            if (pattern.test(val)) {
+                elem.classList.add("valid")
+                elem.classList.remove("invalid")
+
+            } else {
+                elem.classList.add("invalid")
+                elem.classList.remove("valid")
+            }
+        }
+
+        function validNuTe(Numtele) {
+            var val = Numtele.value;
+            const pattern = /^(05|06|07)\d{8}$/;
+            if (pattern.test(val)) {
+                Numtele.classList.add("valid");
+                Numtele.classList.remove("invalid");
+            } else {
+                Numtele.classList.add("invalid");
+                Numtele.classList.remove("valid");
+            }
+        }
+        function Genre() {
+            let allcheck = document.querySelectorAll('.check');
+            let selected = 0;
+            for (let count = 0; count < allcheck.length; count++) {
+                if (allcheck[count].checked == true) {
+                    selected += 1;
+                }
+            }
+            if (selected > 1) {
+                document.querySelector('#invalid').innerText = 'erreur! ';
+                return false;
+            } else {
+                document.querySelector('#invalid').innerText = '';
+            }
+        }
+
+        function Groupe() {
+            let allselect = document.querySelectorAll('#sel');
+            let sele = 0;
+            for (let i = 0; i < allselect.length; i++) {
+                if (allselect[i].checked == true) {
+                    sele += 1;
+                }
+            }
+            if (sele > 1) {
+                document.querySelector('#message').innerText = 'erreur! ';
+                return false;
+            } else {
+                document.querySelector('#message').innerText = '';
+            }
+        }
+
+        function Club() {
+            let allactivi = document.querySelectorAll('#act');
+            let selacti = 0;
+            for (let A = 0; A < allactivi.length; A++) {
+                if (allactivi[A].checked == true) {
+                    selacti += 1;
+                }
+            }
+            if (selacti > 3) {
+                document.querySelector('#msg').innerText = 'erreur!';
+                return false;
+            } else {
+                document.querySelector('#msg').innerText = '';
+            }
+        }
+    </script>
+</body>
+
+</html>
